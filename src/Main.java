@@ -1,70 +1,90 @@
 public class Main {
     public static void main(String[] args) {
-// task 1
-        System.out.println("task 1");
-        for (byte i = 1; i <= 10; i++) {
-            System.out.println(i);
-        }
-        System.out.println();
-// task 2
-        System.out.println("task 2");
-        for (byte i = 10; i >= 1; i--) {
-            System.out.println(i);
-        }
-        System.out.println();
-// task 3
-        System.out.println("task 3");
-        for (byte i = 0; i < 17; i = (byte) (i + 2)) {
-            System.out.println(i);
-        }
-        System.out.println();
-// task 4
-        System.out.println("task 4");
-        for (byte i = 10; i >= -10; i--) {
-            System.out.println(i);
-        }
-        System.out.println();
-// task 5
-        System.out.println("task 5");
-        for (int i = 1904; i <= 2096; i = i + 4) {
-            if ((i % 100) != 0) { // проверка - не является ли год 100-ым
-                System.out.println(i + " год является високосным");
-            }
-        }
-        System.out.println();
-// task 6
-        System.out.println("task 6");
-        for (int i = 1; i <= 14; i++) {
-            System.out.println(i * 7);
-        }
-        System.out.println();
-// task 7
-        System.out.println("task 7");
-        for (int i = 1; i <= 512; ) {
-            System.out.println(i);
-            i = i * 2;
-        }
-        System.out.println();
-// task 8
-        System.out.println("task 8");
+        int i;
+// 1-е задание блока "циклы. урок 2"
+        System.out.println("задание 1");
         int cash = 0;
-        for (int i = 1; i <= 12; i++) {
-            cash = cash + 29000;
-            System.out.println("месяц " + i + ", сумма накоплений равна " + cash + " рублей");
+        i = 0;
+        while (cash < 2_459_000) {
+            cash = cash + 15000;
+            i++;
+        }
+        System.out.println("Месяц - " + i + ", сумма накоплений равна " + cash + " рублей\n");
+
+// 2-е задание блока "циклы. урок 2"
+        System.out.println("задание 2");
+        i = 1;
+        while (i <= 10) {
+            System.out.print(i + " ");
+            i++;
         }
         System.out.println();
+
+        for (i = 10; i >= 1; i--) {
+            System.out.print(i + " ");
+        }
+        System.out.println("\n");
+
+// 3-е задание блока "циклы. урок 2"
+        System.out.println("задание 3");
+        int people = 0;
+        for (i = 1; i <= 10; i++) {
+            people = people + (12_000_000 / 1000) * (17 - 8);  //    (12_000_000/1000)*(17-8) - годовой прирост населения
+            System.out.println("Год " + i + " численность населения составляет " + (people + 12_000_000));
+        }
+        System.out.println();
+
+// 4-е задание блока "циклы. урок 2"
+        System.out.println("задание 4");
+        float deposit = 15000f;
+        i = 0;
+        do {
+            deposit = deposit + deposit * 0.07f;
+            i++;
+            System.out.println("месяц- " + i + ", сумма накоплений- " + deposit);
+        } while (deposit < 12_000_000);
+        System.out.println();
+
+// 5-е задание блока "циклы. урок 2"
+        System.out.println("задание 5");
+        deposit = 15000f;
+        i = 0;
+        do {
+            deposit = deposit + deposit * 0.07f;
+            i++;
+            if (i % 6 == 0) {
+                System.out.println("месяц- " + i + ", сумма накоплений- " + deposit);
+            }
+        } while (deposit < 12_000_000);
+        System.out.println();
+
+// 6-е задание блока "циклы. урок 2"
+        System.out.println("задание 6");
+        deposit = 15000f;
+        i = 0;
+        while (i <= 108) {
+            deposit = deposit + deposit * 0.07f;
+            i++;
+            if (i % 6 == 0) System.out.println("месяц- " + i + ", сумма накоплений- " + deposit);
+        }
+        System.out.println();
+
+// 7-е задание блока "циклы. урок 2"
+        System.out.println("задание 7");
+        int friday = 4;
+        for (i = 1; i <= 31; i++){
+            if (i == friday || ((i-friday)%7) == 0) System.out.println("сегодня "+i+" число(пятница) Необходимо подготовить отчет");
+        }
+        System.out.println();
+
+// 8-е задание блока "циклы. урок 2"
+        System.out.println("задание 8");
+        for (i = 0; i <=2125; i++)
+            if (i > 1825 && (i%79) == 0){
+                System.out.println(i);
+            }
+
+
 // task 9
-        System.out.println("task 9");
-        float deposit = 0.0f;
-        for (int i = 1; i <= 12; i++) {
-            deposit = deposit + (deposit * 0.01f) + 29000f;// (deposit * 0.01f) - 1% от суммы вклада. 29000 - зарплата на каждый месяц
-            System.out.println("месяц " + i + ", сумма накоплений равна " + deposit + " рублей");
-        }
-        System.out.println();
-// task 10
-        System.out.println("task 10");
-        for (int i = 1; i <= 10; i++) {
-            System.out.println("2*" + i + "=" + (2 * i));
-        }
     }
 }
